@@ -13,4 +13,15 @@ movieRouter.get("/movies", async (req,res)=>{
     }
 })
 
+//Post a movie
+movieRouter.post("/movies", async (req,res) => {
+  const movie = new Movies(req.body);
+  try {
+    const newMovie = await movie.save();
+    res.status(201).json({newMovie,message:"movie posted"});
+  } catch (error) {
+    res.status(400).json({ message: "error"});
+  }
+});
+
 module.exports = movieRouter;

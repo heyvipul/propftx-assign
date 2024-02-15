@@ -1,0 +1,25 @@
+.form {
+    display: flex;
+    flex-direction: column;
+}
+.form input{
+    font-size: 15px;
+    width: 20rem;
+    padding: 5px;
+    border: none;
+    background-color: rgb(97, 117, 129);
+    color: wheat;
+}
+.form button{
+    width: 20.5rem;
+    padding: 5px;
+    font-size: 18px;
+    background-color: rgb(252, 73, 85);
+    border: none;
+    /* font-weight: bold; */
+    transition: 0.2s;
+}
+.form button:hover{
+    cursor: pointer;
+    transform: scale(1.03);
+}
