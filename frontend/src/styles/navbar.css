@@ -1,0 +1,31 @@
+.navbar{
+    display: flex;
+    width: 100%;
+    justify-content: space-between;
+    background-color: rgb(252, 73, 85);
+    height: 3rem;
+    align-items: center;
+    color: white;
+}
+.navbar > div{
+    display: flex;
+    align-items: center;
+    width: 30%;
+    justify-content: space-around;
+}
+.navbar > div input{
+    border: none;
+    width: 200px;
+    padding: 5px;
+    font-size: 16px;
+    background-color: rgb(252, 73, 85);
+}
+.navbar > h2{
+    margin-left: 10px;
+}
+.navbar h2:hover{
+    cursor: pointer;
+}
+::placeholder{
+    color: white;
+}

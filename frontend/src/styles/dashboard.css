@@ -1,0 +1,19 @@
+.dashboard{
+    border: 1px solid black;
+    display: flex;
+
+}
+.dashboard > .first{
+    width: 18%;
+    height: 100vh;
+    color: white;
+    background-color: rgb(25,29,30);
+}
+.dashboard > .second{
+    width: 82%;
+    color: white;
+    background-color: rgb(35,43,48);
+}
+.dashboard > .second > div{
+    margin: 20px;
+}
