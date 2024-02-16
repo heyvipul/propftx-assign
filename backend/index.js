@@ -1,12 +1,13 @@
 const express = require("express")
 const mongoose = require("mongoose");
-const movieRouter = require("./Routes/movie.routes.");
 const SECRET_KEY = process.env.SECRET_KEY || "afkdhkcxjvndbdnfc"
 const bcrypt = require("bcrypt")
 const jwt = require("jsonwebtoken")
 const cors = require("cors");
 const bodyParser = require('body-parser');
 const User = require("./models/user");
+const movieRouter = require("./Routes/movie.routes");
+
 require('dotenv').config()
 const PORT = process.env.PORT || 8080
 const app = express();
@@ -74,7 +75,7 @@ app.post("/login",async (req,res)=>{
 })
 
 
-app.use("/",(req,res)=>{
+app.get("/",(req,res)=>{
     res.send("hello world from movies")
 })
 
