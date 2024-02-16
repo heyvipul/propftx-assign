@@ -1,6 +1,9 @@
-### MovieApp
+## MovieApp
 
 Welcome to MovieApp! This is a web application built to manage and explore movies. Users can register, login, add their movies, search them!.
+
+### Tech Stack
+* Frontend 
 
 ### Dashboard
 
