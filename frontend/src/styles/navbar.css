@@ -7,11 +7,25 @@
     align-items: center;
     color: white;
 }
+
 .navbar > div{
     display: flex;
     align-items: center;
     width: 30%;
     justify-content: space-around;
+}
+@media (max-width: 830px) {
+    .navbar > div{
+        width: 50%;
+    }
+}
+@media (max-width: 500px) {
+    .navbar > div{
+        width: 50%;
+    }
+    .navbar > div input{
+        display: none;
+    }
 }
 .navbar > div input{
     border: none;
@@ -29,3 +43,66 @@
 ::placeholder{
     color: white;
 }
+.link-heading h2{
+    color: white;
+    margin-left: 10px;
+}
+.link-heading{
+    text-decoration: none;
+}
+
+
+/* login */
+.login-outer{
+    background-color: rgb(25,29,30);
+    padding: 40px;
+    padding-bottom: 200px;
+}
+
+.login{
+    width: 25%;
+    height: 400px;
+    margin: auto;
+    color: white;
+    background-color: rgb(35,43,48);
+    box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+    align-items: center;
+    border-radius: 20px;
+}
+
+@media (max-width:830px) {
+    .login{
+        width: 60%;
+    }
+}
+@media (max-width:500px) {
+    .login{
+        width: 90%;
+    }   
+}
+
+
+
+#form{
+  display: flex;
+  flex-direction: column; 
+  margin: 35px;
+  font-size: 18px;
+}
+input{
+    padding: 5px;
+    font-size: 16px;
+}
+button{
+    padding: 4px;
+    font-size: 18px;
+    background-color: rgb(252, 73, 85);
+}
+button:hover{
+    cursor: pointer;
+}
+span:hover{
+    cursor: pointer;
+    color: rgb(252, 73, 85);
+}
+  

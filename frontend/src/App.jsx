@@ -1,5 +1,6 @@
 
 import './App.css'
+import AllRoutes from './components/AllRoutes'
 import Navbar from './components/Navbar'
 import axios from "axios"
 
@@ -10,7 +11,8 @@ function App() {
 
   return (
     <>
-      <Navbar/>
+      {/* <Navbar/> */}
+      <AllRoutes/>
     </>
   )
 }

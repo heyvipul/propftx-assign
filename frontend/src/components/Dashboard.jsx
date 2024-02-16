@@ -7,6 +7,7 @@ const Dashboard = ({ search }) => {
   const [movieData, setMovieData] = useState([]);
   const [toggle, setToggle] = useState(true)
   const [filteredData, setFilteredData] = useState([]);
+  const [count, setCount] = useState(0);
 
   console.log(search);
 
@@ -41,13 +42,15 @@ const Dashboard = ({ search }) => {
     }
   }, [movieData, search]);
 
+  
+
   return (
     <div className="dashboard">
       <div className="first">
         <div>
           <h3 onClick={() => setToggle(true)}>New Releases</h3>
           <h3 onClick={() => setToggle(false)}>Add Movie</h3>
-          <h3>Watch Later</h3>
+          <h3>Watch Later [<span>{count}</span>]</h3>
           <h3>Coming Soon</h3>
           <h3>Favourites</h3>
         </div>
@@ -73,7 +76,7 @@ const Dashboard = ({ search }) => {
                     <p>Year : {ele.Year}</p>
                     <p>Rating : {ele.imdbRating}</p>
                   </div>
-                  <button>Add to Watchlist</button>
+                  <button onClick={()=>setCount(count+1)}>Add to Watchlater</button>
                 </div>
               ))
             )}

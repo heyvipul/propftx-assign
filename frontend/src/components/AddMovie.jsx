@@ -1,8 +1,10 @@
 import { useState } from "react";
 import "../styles/addmovie.css"
 import axios from "axios";
+import {useNavigate} from  "react-router-dom"
 
 const AddMovie = () => {
+    const navigate = useNavigate()
     const [formData, setFormData] = useState({
         Title: '',
         Year: '',
@@ -30,6 +32,7 @@ const AddMovie = () => {
            console.log(data);
            if(data.message === "movie posted"){
             alert("Movie Posted successfully!")
+            navigate("/")
            }
         } catch (error) {
            console.log(error); 
