@@ -3,7 +3,20 @@
 Welcome to MovieApp! This is a web application built to manage and explore movies. Users can register, login, add their movies, search them!.
 
 ### Tech Stack
-* Frontend 
+### Frontend
+* React
+* axios
+* react-router-dom
+
+### Backend
+* Node
+* Express
+* MongoDb
+* JWT Token for authentication
+* Cors
+* bcrypt
+* body-parser dotenv
+
 
 ### Dashboard
 
