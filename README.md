@@ -1,4 +1,6 @@
-### link : https://65cf517606b6fa0098ebef09--remarkable-kelpie-62a7a7.netlify.app/
+### MovieApp
+
+Welcome to MovieApp! This is a web application built to manage and explore movies. Users can register, login, add their movies, search them!.
 
 ### Dashboard
 
