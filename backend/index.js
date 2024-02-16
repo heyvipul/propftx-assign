@@ -51,7 +51,6 @@ app.post("/register", async(req,res)=>{
 })
 
 //login
-
 app.post("/login",async (req,res)=>{
     const {email,password} = req.body
     const user = await User.findOne({email})
@@ -74,14 +73,10 @@ app.post("/login",async (req,res)=>{
 
 })
 
+
 app.use("/",(req,res)=>{
     res.send("hello world from movies")
 })
-
-
-
-
-
 
 app.listen(8000,()=>{
     console.log(`Api running on ${PORT}`);
