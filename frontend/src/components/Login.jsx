@@ -1,7 +1,8 @@
 import { Link, useNavigate } from "react-router-dom"
 import "../styles/navbar.css"
-import { useState } from "react";
+import { useContext, useEffect, useState } from "react";
 import axios from "axios";
+import { authContext } from "./AuthContext";
 
 const Login = () => {
     const[name,setName] = useState("")
@@ -9,10 +10,23 @@ const Login = () => {
     const[password,setPassword] = useState("");
     const[toggle,setToggle] = useState(true);
     const navigate = useNavigate()
+    const [auth,setAuth] = useState(false);
+
+    const {user,setUser} = useContext(authContext)
+    // console.log(user);
+
 
     //login
     const[eemail,setEemail] = useState("john@gmail.com")
     const[ppassword,setPpassword] = useState("john123");
+
+    useEffect(() => {
+      const token = localStorage.getItem("token");
+      if (token) {
+        setAuth(true);
+        setUser(eemail)
+      }
+    }, []);
     
 
 
@@ -49,14 +63,22 @@ const Login = () => {
             password : ppassword
           })
           const data = await response.data
+          console.log(data);
           if(data.msg == "Login successfull!")
+          localStorage.setItem("token",JSON.stringify(data.token))
+          localStorage.setItem("user",JSON.stringify(eemail))
+          setUser(eemail)
+          setAuth(true);
           alert("Login successfull")
           navigate("/")
+
       
         } catch (error) {
           console.log(error);
         }
       }
+
+      
 
 
 
@@ -66,7 +88,7 @@ const Login = () => {
             <Link className="link-heading" to={"/"}><h2>MOVIE APP</h2></Link>
             <div>
                 
-                <Link className="link-heading" to={"/login"}><h2>Login/Signup</h2></Link>  
+                <Link className="link-heading" to={"/login"}><h2>{auth? eemail:"Login/Signup"}</h2></Link>  
             </div>
         </div>
 

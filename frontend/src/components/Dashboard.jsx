@@ -8,6 +8,7 @@ const Dashboard = ({ search }) => {
   const [toggle, setToggle] = useState(true)
   const [filteredData, setFilteredData] = useState([]);
   const [count, setCount] = useState(0);
+  const [loading,setLoading] = useState(false)
 
   console.log(search);
 
@@ -15,6 +16,7 @@ const Dashboard = ({ search }) => {
     try {
       const response = await axios.get("/movies")
       const data = response.data
+      setLoading(true)
       setMovieData(data)
 
     } catch (error) {
@@ -65,6 +67,11 @@ const Dashboard = ({ search }) => {
 
         {toggle ? (
           <div className="movie-card">
+            
+            {
+              loading ? "" : "Loading....."
+            }
+
             {filteredData.length === 0 ? (
               <p>No movies found.</p>
             ) : (
